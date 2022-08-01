@@ -46,8 +46,5 @@ mkdir -p %{buildroot}%{_sysconfdir}/fonts/conf.d
 install -c -m 644 %{S:1} %{buildroot}%{_sysconfdir}/fonts/conf.d/90-noto-emoji.conf
 
 %files
-# Leaving the "/" in here is _BAD_, but will generally work [packaging all
-# files] for testing.
-# Please replace it with an actual file list to prevent your package from
-# owning all system directories.
-/
+%{_sysconfdir}/fonts/conf.d/*
+%{_datadir}/fonts/TTF/*
