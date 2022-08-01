@@ -16,6 +16,8 @@ BuildRequires: zopfli
 BuildRequires: cmake(Zopfli)
 BuildRequires: pngquant
 BuildRequires: imagemagick
+Obsoletes: noto-emoji-fonts <= 20171024-4
+Provides: noto-emoji-fonts = 20171024-4
 
 %description
 Color and Black-and-White Noto emoji fonts
