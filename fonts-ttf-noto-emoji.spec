@@ -1,6 +1,6 @@
 Name: fonts-ttf-noto-emoji
 Version: 2.034
-Release: 1
+Release: 2
 Source0: https://github.com/googlefonts/noto-emoji/archive/refs/tags/v%{version}.tar.gz
 # Based on comments on https://github.com/googlefonts/noto-emoji/issues/36
 Source1: noto-emoji.conf
@@ -18,6 +18,8 @@ BuildRequires: pngquant
 BuildRequires: imagemagick
 Obsoletes: noto-emoji-fonts <= 20171024-4
 Provides: noto-emoji-fonts = 20171024-4
+Obsoletes: noto-coloremoji-fonts <= 20171024-4
+Provides: noto-coloremoji-fonts = 20171024-4
 BuildArch: noarch
 
 %description
