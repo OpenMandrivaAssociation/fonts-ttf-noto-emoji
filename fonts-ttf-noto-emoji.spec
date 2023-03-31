@@ -1,6 +1,6 @@
 Name: fonts-ttf-noto-emoji
 Version: 2.034
-Release: 2
+Release: 3
 Source0: https://github.com/googlefonts/noto-emoji/archive/refs/tags/v%{version}.tar.gz
 # Based on comments on https://github.com/googlefonts/noto-emoji/issues/36
 Source1: noto-emoji.conf
