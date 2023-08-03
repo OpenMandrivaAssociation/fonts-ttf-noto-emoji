@@ -1,9 +1,13 @@
 Name: fonts-ttf-noto-emoji
-Version: 2.034
-Release: 3
+Version: 2.038
+Release: 1
 Source0: https://github.com/googlefonts/noto-emoji/archive/refs/tags/v%{version}.tar.gz
 # Based on comments on https://github.com/googlefonts/noto-emoji/issues/36
 Source1: noto-emoji.conf
+# FIXME This isn't being built anymore -- is it still worth shipping?
+# Probably there is some stuff hardcoding NotoEmoji without "Color"...
+# For now, let's be on the safe side
+Source2: https://github.com/googlefonts/noto-emoji/raw/v2.034/fonts/NotoEmoji-Regular.ttf
 Summary: Color and Black-and-White Noto emoji fonts
 URL: https://github.com/googlefonts/noto-emoji
 License: Apache-2.0
@@ -39,11 +43,7 @@ Color and Black-and-White Noto emoji fonts
 mkdir -p %{buildroot}%{_datadir}/fonts/TTF
 install -c -m 644 NotoColorEmoji.ttf %{buildroot}%{_datadir}/fonts/TTF/
 
-# FIXME The non-color version of the font doesn't get built, but its
-# prebuilt TTF file sits in the source tree...
-# Until we figure out how to build it, it's safe to ship the prebuilt - fonts
-# don't contain code...
-install -c -m 644 fonts/NotoEmoji-Regular.ttf %{buildroot}%{_datadir}/fonts/TTF/
+install -c -m 644 %{S:2} %{buildroot}%{_datadir}/fonts/TTF/
 
 mkdir -p %{buildroot}%{_sysconfdir}/fonts/conf.d
 install -c -m 644 %{S:1} %{buildroot}%{_sysconfdir}/fonts/conf.d/90-noto-emoji.conf
